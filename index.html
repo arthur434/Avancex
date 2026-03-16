@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avancex | Cursos On-line</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-blue: #0081C9;
+            --dark-blue: #005B8E;
+            --purple: #6C63FF;
+            --white: #FFFFFF;
+            --light-bg: #F8FAFC;
+            --text-main: #1E293B;
+            --text-muted: #64748B;
+            --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* --- Cabeçalho --- */
+        header {
+            background: var(--white);
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .logo span {
+            color: var(--purple);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            margin-left: 25px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            color: var(--primary-blue);
+        }
+
+        .btn-portal {
+            background: var(--primary-blue);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+
+        /* --- Seção Principal (Hero) --- */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #004e7a 100%);
+            padding: 100px 8% 140px;
+            text-align: left;
+            position: relative;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-section p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        /* --- Barra de Pesquisa --- */
+        .search-wrapper {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1100px;
+            background: var(--white);
+            padding: 30px 40px;
+            border-radius: 30px;
+            box-shadow: var(--shadow-premium);
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            z-index: 10;
+        }
+
+        .search-icon-box {
+            font-size: 2.5rem;
+            color: #CBD5E1;
+        }
+
+        .search-text-labels {
+            flex: 1;
+        }
+
+        .search-text-labels h2 {
+            font-size: 1.25rem;
+            color: #1e293b;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .badge-free {
+            background: #0056b3;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .input-group {
+            flex: 2;
+            background: #F1F5F9;
+            border-radius: 12px;
+            padding: 5px 15px;
+            display: flex;
+            align-items: center;
+            border: 1px solid #E2E8F0;
+        }
+
+        .input-group input {
+            border: none;
+            background: transparent;
+            padding: 12px;
+            width: 100%;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .btn-search-now {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-search-now:hover {
+            background: var(--dark-blue);
+            transform: translateY(-2px);
+        }
+
+        /* --- Grid de Cursos --- */
+        .courses-section {
+            padding: 120px 8% 80px;
+            min-height: 500px;
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+            border-left: 6px solid var(--purple);
+            padding-left: 20px;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #E2E8F0;
+            transition: 0.3s;
+            display: block;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-premium);
+        }
+
+        .course-thumb {
+            height: 180px;
+            background: #DDD center/cover;
+            position: relative;
+        }
+
+        .course-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #FFD600;
+            color: #000;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 0.7rem;
+        }
+
+        .course-body {
+            padding: 20px;
+        }
+
+        .course-body h3 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            height: 50px;
+            overflow: hidden;
+            color: var(--text-main);
+        }
+
+        .course-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #F1F5F9;
+        }
+
+        .btn-enroll {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .no-results-msg {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            background: var(--white);
+            border-radius: 12px;
+            border: 1px dashed #CBD5E1;
+            color: var(--text-muted);
+            grid-column: 1 / -1;
+        }
+
+        /* --- Páginas Internas --- */
+        .content-container {
+            max-width: 1000px;
+            margin: 60px auto;
+            background: var(--white);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-premium);
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .page-header h1 {
+            color: var(--primary-blue);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .text-content p {
+            margin-bottom: 20px;
+            text-align: justify;
+            color: var(--text-main);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* Detalhes do Curso */
+        .curso-detalhe-bloco {
+            display: none;
+        }
+
+        .curso-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+
+        .meta-item {
+            background: var(--light-bg);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .aprendizado-lista {
+            list-style: none;
+            margin: 25px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .aprendizado-lista li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 1.05rem;
+            color: var(--text-main);
+        }
+
+        .aprendizado-lista li i {
+            color: #10B981;
+            margin-top: 5px;
+            font-size: 1.1rem;
+        }
+
+        .btn-voltar {
+            background: #E2E8F0;
+            color: var(--text-main);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        .btn-voltar:hover {
+            background: #CBD5E1;
+        }
+
+        /* --- Layout da Página de Cursos --- */
+        .cursos-hub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .curso-hub-card {
+            background: var(--light-bg);
+            border: 1px solid #E2E8F0;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .curso-hub-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-premium);
+            border-color: var(--primary-blue);
+        }
+
+        .curso-hub-icon {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .curso-hub-card h2 {
+            color: var(--text-main);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .curso-hub-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 25px;
+        }
+
+        .btn-hub-acessar {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        .curso-hub-card:hover .btn-hub-acessar {
+            background: var(--dark-blue);
+        }
+
+        /* --- Rodapé --- */
+        footer {
+            background: #0F172A;
+            color: white;
+            padding: 80px 8% 40px;
+            margin-top: 50px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 50px;
+        }
+
+        .footer-col h4 {
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: #94A3B8;
+            text-decoration: none;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        /* Responsividade para Celulares e Tablets */
+        @media (max-width: 992px) {
+            .hero-section {
+                padding-bottom: 60px;
+            }
+
+            .search-wrapper {
+                position: relative;
+                bottom: auto;
+                transform: none;
+                left: auto;
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
+                margin-top: 40px;
+            }
+
+            .courses-section {
+                padding-top: 60px;
+            }
+
+            .hero-section h1 {
+                font-size: 2.2rem;
+            }
+
+            .input-group,
+            .btn-search-now {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 5%;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+                width: 100%;
+            }
+
+            nav a {
+                margin-left: 0;
+                font-size: 0.9rem;
+            }
+
+            .btn-portal {
+                width: 100%;
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            .hero-section h1 {
+                font-size: 1.8rem;
+            }
+
+            .search-wrapper {
+                padding: 20px;
+            }
+
+            .search-text-labels h2 {
+                font-size: 1.1rem;
+            }
+
+            .content-container {
+                padding: 30px;
+                margin: 30px auto;
+                width: 90%;
+            }
+
+            .page-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .curso-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        /* ===== RESPONSIVIDADE EXTRA PARA CELULAR ===== */
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width:600px) {
+
+            .hero-section {
+                padding: 60px 5% 80px;
+            }
+
+            .hero-section h1 {
+                font-size: 1.6rem;
+                line-height: 1.3;
+            }
+
+            .hero-section p {
+                font-size: 0.95rem;
+            }
+
+            .search-wrapper {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+                border-radius: 20px;
+            }
+
+            .input-group {
+                width: 100%;
+            }
+
+            .btn-search-now {
+                width: 100%;
+                padding: 14px;
+            }
+
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .courses-section {
+                padding: 60px 5%;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a onclick="mostrarInicio()" class="logo">AVANCE<span>X</span></a>
+        <nav>
+            <a onclick="mostrarInicio()">Início</a>
+            <a onclick="mostrarPaginaCursos()">Cursos</a>
+            <a href="https://discord.gg/SSYaksSv" target="_blank">Discord</a>
+            <a href="https://dashboard.kiwify.com/courses" class="btn-portal" target="_blank">ÁREA DO ALUNO</a>
+        </nav>
+    </header>
+
+    <div id="paginaInicio">
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Aprenda Inglês de Graça na Maior Plataforma de Ensino Online</h1>
+                <p>Mais de horas de conteúdo exclusivo esperando por você seja mais um de nossos alunos online . Comece
+                    agora sua jornada para a fluência.</p>
+                <br>
+            </div>
+
+            <div class="search-wrapper">
+                <div class="search-icon-box"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <div class="search-text-labels">
+                    <h2>Qual curso deseja estudar hoje?</h2>
+                    <p style="color: #64748B; font-size: 0.9rem; margin-top: 4px;">
+                        Pesquise por cursos ou áreas...
+                        <span class="badge-free"><i class="fa-solid fa-bolt-lightning"></i> Cursos gratuitos</span>
+                    </p>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="searchInput" onkeyup="pesquisarCursos()"
+                        placeholder="Ex: Iniciantes, Negócios, Gramática...">
+                </div>
+                <button class="btn-search-now" onclick="pesquisarCursos()">Pesquisar</button>
+            </div>
+        </section>
+
+        <main class="courses-section">
+            <div class="section-header">
+                <h2 style="font-size: 2rem;">Cursos em Destaque</h2>
+                <p style="color: var(--text-muted);">Explore as categorias mais acessadas pelos nossos alunos.</p>
+            </div>
+
+            <div class="course-grid" id="courseGrid">
+
+                <div class="course-card">
+                    <div class="course-thumb"
+                        style="background-image: url('https://images.unsplash.com/photo-1543167664-40d6944b3616?auto=format&fit=crop&w=500&q=80')">
+                        <span class="course-tag">GRATUITO</span>
+                    </div>
+                    <div class="course-body">
+                        <h3>Inglês do Zero: Primeiros Passos para Iniciantes</h3>
+                        <div class="course-footer">
+                            <span style="font-size: 0.85rem; color: #10B981; font-weight: 700;">GRATUITO</span>
+                            <a href="https://sites.google.com/view/avancex-teste-gratuito/in%C3%ADcio" target="_blank"
+                                class="btn-enroll">ACESSAR CURSO <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-thumb"
+                        style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=500&q=80')">
+                        <span class="course-tag">POPULAR</span>
+                    </div>
+                    <div class="course-body">
+                        <h3>Inglês para Negócios: Vocabulário Corporativo</h3>
+                        <div class="course-footer">
+                            <span style="font-size: 0.8rem; color: #64748B;"><i class="far fa-clock"></i> 60h</span>
+                            <a href="https://sites.google.com/view/erro-404/in%C3%ADcio" target="_blank"
+                                class="btn-enroll">ACESSAR CURSO <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-thumb"
+                        style="background-image: url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=500&q=80')">
+                        <span class="course-tag">O MELHOR PREÇO</span>
+                    </div>
+                    <div class="course-body">
+                        <h3>Curso de Jornalismo: A Verdade por Trás das Notícias</h3>
+                        <div class="course-footer">
+                            <span style="font-size: 0.8rem; color: #64748B;"><i class="far fa-clock"></i> 30h -
+                                45h</span>
+                            <a href="https://pay.kiwify.com.br/pdcuB1v" target="_blank"
+                                class="btn-enroll">ACESSAR CURSO <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-thumb"
+                        style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=500&q=80')">
+                        <span class="course-tag">NOVO</span>
+                    </div>
+                    <div class="course-body">
+                        <h3>Curso de Inglês: Os primeiros passos: Versão completa</h3>
+                        <div class="course-footer">
+                            <span style="font-size: 0.8rem; color: #64748B;"><i class="far fa-clock"></i> 35h -
+                                50h</span>
+                            <a href="https://pay.kiwify.com.br/MGRu6OZ" target="_blank"
+                                class="btn-enroll">ACESSAR CURSO <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <div id="paginaCursos" style="display: none;">
+        <div class="content-container">
+            <div class="page-header">
+                <h1>Nossos Cursos Profissionais</h1>
+                <p style="color: var(--text-muted); font-size: 1.1rem; margin-top: 10px;">Escolha a sua área de formação
+                    e comece a estudar hoje mesmo.</p>
+            </div>
+
+            <div class="cursos-hub-grid">
+                <div class="curso-hub-card" onclick="mostrarSaibaMais('bloco-jornalismo')">
+                    <i class="fas fa-newspaper curso-hub-icon"></i>
+                    <h2>Curso de Jornalismo</h2>
+                    <p>Formação completa em comunicação, investigação e produção de notícias. Aprenda a verdade por trás
+                        da informação.</p>
+                    <button class="btn-hub-acessar">Ver Detalhes da Formação</button>
+                </div>
+
+                <div class="curso-hub-card" onclick="mostrarSaibaMais('bloco-ingles')">
+                    <i class="fas fa-language curso-hub-icon"></i>
+                    <h2>Curso de Inglês Completo</h2>
+                    <p>Estrutura progressiva do básico ao avançado. Desenvolva sua fluência com gramática e vocabulário
+                        profissional.</p>
+                    <button class="btn-hub-acessar">Ver Detalhes da Formação</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="paginaSaibaMais" style="display: none;">
+        <div class="content-container">
+            <button class="btn-voltar" onclick="mostrarPaginaCursos()"><i class="fas fa-arrow-left"></i> Voltar para
+                Cursos</button>
+
+            <div class="text-content">
+
+                <div id="bloco-jornalismo" class="curso-detalhe-bloco">
+                    <div class="page-header">
+                        <h1>Curso de Jornalismo Avancex</h1>
+                        <p style="color: var(--text-muted); font-size: 1.1rem; margin-top: 10px;">Formação em
+                            Comunicação e Produção de Notícias</p>
+                    </div>
+
+                    <div class="curso-meta">
+                        <div class="meta-item"><i class="far fa-file-alt"></i> 65 Páginas</div>
+                        <div class="meta-item"><i class="far fa-clock"></i> 30h a 45h de Estudo</div>
+                    </div>
+
+                    <p>Este curso foi desenvolvido para ensinar os fundamentos do jornalismo de forma clara, organizada
+                        e acessível. O material apresenta os principais conceitos da profissão e mostra como funciona o
+                        processo de criação, investigação e publicação de notícias.</p>
+                    <p>O curso é organizado em diversas aulas que abordam diferentes áreas do jornalismo. Cada parte do
+                        material foi estruturada para que o aluno compreenda passo a passo como funciona o trabalho de
+                        um jornalista e como as informações são transformadas em notícias para o público.</p>
+                    <p>No início do curso, o aluno aprende o que é jornalismo, qual é a importância da informação para a
+                        sociedade e qual é o papel do jornalista na comunicação moderna. Essas primeiras aulas ajudam a
+                        construir uma base sólida para entender como a profissão funciona.</p>
+
+                    <h3 style="margin-top: 30px; color: var(--text-main);">Ao longo do material, você aprenderá:</h3>
+                    <ul class="aprendizado-lista">
+                        <li><i class="fas fa-check-circle"></i> Como identificar e construir uma notícia</li>
+                        <li><i class="fas fa-check-circle"></i> Estrutura do texto jornalístico</li>
+                        <li><i class="fas fa-check-circle"></i> Técnica da pirâmide invertida</li>
+                        <li><i class="fas fa-check-circle"></i> Como realizar entrevistas jornalísticas</li>
+                        <li><i class="fas fa-check-circle"></i> Ética e responsabilidade na comunicação</li>
+                        <li><i class="fas fa-check-circle"></i> Técnicas de investigação e apuração de fatos</li>
+                        <li><i class="fas fa-check-circle"></i> Como criar títulos e chamadas de impacto</li>
+                    </ul>
+
+                    <p>O curso também apresenta diferentes áreas da profissão, explicando como funciona o jornalismo em
+                        diversos meios de comunicação, como rádio, televisão, fotografia jornalística e mídia digital.
+                        Isso ajuda o aluno a entender como a informação é produzida em diferentes formatos.</p>
+                    <p>Além das explicações teóricas, o material inclui exemplos práticos e exercícios de fixação que
+                        ajudam o aluno a revisar o conteúdo aprendido e desenvolver habilidades de comunicação. Esses
+                        exercícios tornam o aprendizado mais completo e ajudam a reforçar os conceitos apresentados nas
+                        aulas.</p>
+                    <p>O curso foi estruturado para ser acessível tanto para iniciantes quanto para pessoas interessadas
+                        em compreender melhor o funcionamento da imprensa e da produção de notícias. Ao final do curso,
+                        o aluno terá uma base sólida sobre comunicação, investigação jornalística, produção de conteúdo
+                        informativo e ética profissional no jornalismo.</p>
+
+                    <div style="text-align: center; margin-top: 40px;">
+                        <a href="https://pay.kiwify.com.br/pdcuB1v" target="_blank"
+                            style="background: var(--primary-blue); color: white; padding: 15px 40px; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1.1rem; display: inline-block; transition: 0.3s;">GARANTIR
+                            MINHA VAGA AGORA</a>
+                    </div>
+                </div>
+
+                <div id="bloco-ingles" class="curso-detalhe-bloco">
+                    <div class="page-header">
+                        <h1>Curso de Inglês Avancex</h1>
+                        <p style="color: var(--text-muted); font-size: 1.1rem; margin-top: 10px;">Formação Completa do
+                            Básico ao Avançado</p>
+                    </div>
+
+                    <div class="curso-meta">
+                        <div class="meta-item"><i class="far fa-file-alt"></i> 74 Páginas</div>
+                        <div class="meta-item"><i class="far fa-clock"></i> 35h a 50h de Estudo</div>
+                    </div>
+
+                    <p>Este curso foi desenvolvido para pessoas que desejam aprender inglês de forma clara, prática e
+                        organizada, começando do nível iniciante até conteúdos mais avançados da língua inglesa. O
+                        material foi estruturado para que qualquer pessoa consiga aprender passo a passo, mesmo sem ter
+                        conhecimento prévio do idioma.</p>
+                    <p>Cada parte do material foi planejada para ensinar o inglês de forma progressiva, começando pelos
+                        fundamentos do idioma e avançando gradualmente para estruturas mais completas e profissionais.
+                    </p>
+                    <p>A estrutura do curso é dividida em diferentes módulos de estudo. No início, o aluno aprende os
+                        conceitos básicos da língua inglesa, como formação de frases simples, uso de pronomes,
+                        vocabulário do dia a dia e introdução à gramática. Essas primeiras aulas ajudam o estudante a
+                        entender como o inglês funciona e como montar frases corretamente.</p>
+
+                    <h3 style="margin-top: 30px; color: var(--text-main);">Durante o curso, você aprenderá:</h3>
+                    <ul class="aprendizado-lista">
+                        <li><i class="fas fa-check-circle"></i> Estrutura correta das frases em inglês</li>
+                        <li><i class="fas fa-check-circle"></i> Uso do verbo to be (am, is, are)</li>
+                        <li><i class="fas fa-check-circle"></i> Formação de frases afirmativas, negativas e perguntas
+                        </li>
+                        <li><i class="fas fa-check-circle"></i> Vocabulário essencial do dia a dia</li>
+                        <li><i class="fas fa-check-circle"></i> Construção de frases completas</li>
+                        <li><i class="fas fa-check-circle"></i> Leitura e interpretação de textos</li>
+                        <li><i class="fas fa-check-circle"></i> Uso de verbos em diferentes tempos verbais</li>
+                    </ul>
+
+                    <p>Além das explicações teóricas, o curso também inclui exemplos práticos e exercícios que ajudam a
+                        reforçar o aprendizado. Esses exercícios permitem que o aluno pratique o que foi aprendido e
+                        desenvolva mais segurança ao usar o idioma.</p>
+                    <p>Conforme o estudante avança nas aulas, o conteúdo passa a incluir temas mais completos da língua
+                        inglesa, como estruturas gramaticais mais complexas, conectores, expressões usadas em conversas
+                        reais e formas mais avançadas de comunicação. Isso ajuda o aluno a evoluir gradualmente no
+                        domínio do idioma.</p>
+                    <p>O curso foi organizado de forma simples e direta, permitindo que o estudante estude no próprio
+                        ritmo, revise as aulas sempre que necessário e avance no aprendizado sem pressão. Essa
+                        metodologia facilita a memorização do conteúdo e torna o processo de aprendizado mais eficiente.
+                    </p>
+                    <p>Ao final do curso, o aluno terá adquirido uma base sólida de inglês, sendo capaz de compreender
+                        frases, montar textos simples, entender conversas básicas e continuar evoluindo no idioma com
+                        muito mais segurança.</p>
+
+                    <div style="text-align: center; margin-top: 40px;">
+                        <a href="https://pay.kiwify.com.br/MGRu6OZ" target="_blank"
+                            style="background: var(--primary-blue); color: white; padding: 15px 40px; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1.1rem; display: inline-block; transition: 0.3s;">GARANTIR
+                            MINHA VAGA AGORA</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="paginaTermos" style="display: none;">
+        <div class="content-container">
+            <button class="btn-voltar" onclick="mostrarInicio()"><i class="fas fa-arrow-left"></i> Voltar para
+                Início</button>
+            <div class="page-header">
+                <h1 style="font-size: 1.8rem;">TERMOS E CONDIÇÕES OFICIAIS DE USO — AVANCEX</h1>
+                <p style="color: var(--text-muted); font-size: 1.1rem; margin-top: 10px;">Plataforma de Comercialização
+                    de Cursos Online</p>
+            </div>
+
+            <div class="text-content">
+                <p>Os presentes Termos e Condições de Uso estabelecem, de forma integral, clara e juridicamente
+                    estruturada, todas as normas que regulamentam o acesso, utilização, aquisição de produtos digitais e
+                    qualquer interação realizada dentro da plataforma Avancex, empresa dedicada à comercialização de
+                    cursos online, conteúdos educacionais digitais e treinamentos especializados.</p>
+                <p>Ao acessar o site, plataforma, sistema, aplicação, página de vendas ou qualquer ambiente digital
+                    pertencente à Avancex, bem como ao adquirir qualquer curso, material educativo, treinamento,
+                    apostila digital, vídeo-aula ou conteúdo disponibilizado pela empresa, o usuário declara, de maneira
+                    explícita, consciente e inequívoca, que realizou a leitura completa destes termos, compreendeu todas
+                    as cláusulas aqui estabelecidas e concorda integralmente com todas as disposições presentes neste
+                    documento.</p>
+                <p>A Avancex é uma empresa voltada para a distribuição de conhecimento digital por meio de cursos
+                    online, conteúdos educacionais e treinamentos destinados ao desenvolvimento pessoal, intelectual e
+                    profissional de seus usuários. A empresa atua exclusivamente como fornecedora de conteúdo
+                    educacional digital, não exercendo qualquer tipo de controle sobre as decisões pessoais,
+                    profissionais ou financeiras tomadas pelos usuários após o consumo do conteúdo adquirido.</p>
+                <p>Um dos princípios fundamentais estabelecidos pela Avancex consiste no reconhecimento da autonomia
+                    financeira individual do usuário. Isso significa que cada pessoa possui total responsabilidade,
+                    domínio e controle sobre o seu próprio dinheiro e sobre as decisões relacionadas ao uso de seus
+                    recursos financeiros. Dessa forma, qualquer compra realizada dentro da plataforma é considerada uma
+                    decisão voluntária, consciente e deliberada do próprio usuário.</p>
+                <p>Ao efetuar qualquer pagamento dentro da plataforma Avancex, o usuário declara que compreende
+                    plenamente que está utilizando seus próprios recursos financeiros para adquirir um produto digital
+                    educacional, sendo este composto por conteúdos intelectuais, aulas, materiais didáticos e
+                    treinamentos informativos. O usuário reconhece que está ciente da natureza do produto adquirido,
+                    entendendo que se trata de conteúdo digital e não de um produto físico.</p>
+                <p>A empresa Avancex não exerce qualquer forma de pressão, indução forçada, manipulação psicológica ou
+                    obrigatoriedade para que o usuário realize compras. Toda transação financeira realizada dentro da
+                    plataforma ocorre por iniciativa exclusiva do próprio consumidor, que possui total liberdade para
+                    decidir se deseja ou não adquirir qualquer produto disponibilizado pela empresa.</p>
+                <p>Ao concluir uma compra, o usuário confirma que compreende que está investindo em conhecimento,
+                    capacitação intelectual ou desenvolvimento profissional. O conceito de investimento em conhecimento
+                    é compreendido como a aplicação voluntária de recursos financeiros na aquisição de informações,
+                    treinamentos ou conteúdos educacionais que podem contribuir para o crescimento pessoal ou
+                    profissional do indivíduo.</p>
+                <p>A Avancex esclarece de maneira objetiva que não garante resultados financeiros, profissionais ou
+                    pessoais específicos decorrentes da aplicação dos conteúdos ensinados em seus cursos. O desempenho
+                    individual de cada usuário depende de múltiplos fatores externos e internos, incluindo disciplina,
+                    dedicação, prática, contexto econômico, ambiente profissional, capacidade de execução, esforço
+                    pessoal e tomada de decisões estratégicas por parte do próprio usuário.</p>
+                <p>Todos os conteúdos disponibilizados pela Avancex, incluindo vídeos, textos, apostilas, materiais
+                    complementares, aulas, estruturas de treinamento e qualquer outro material educativo, são protegidos
+                    pelas leis de direitos autorais, propriedade intelectual e legislação de proteção de conteúdo
+                    digital.</p>
+                <p>É estritamente proibido copiar, distribuir, compartilhar, reproduzir, revender, transmitir, publicar
+                    ou disponibilizar qualquer conteúdo pertencente à Avancex sem autorização expressa, formal e
+                    documentada da empresa. Qualquer violação dessas normas poderá resultar em medidas legais cabíveis,
+                    incluindo bloqueio de acesso à plataforma, cancelamento da conta do usuário e possíveis ações
+                    judiciais relacionadas à violação de direitos autorais.</p>
+                <p>O acesso aos cursos adquiridos é considerado pessoal, individual e intransferível, sendo destinado
+                    exclusivamente ao usuário que realizou a compra. O compartilhamento de contas, distribuição de
+                    login, disponibilização de conteúdo para terceiros ou qualquer forma de redistribuição não
+                    autorizada constitui infração direta destes termos.</p>
+                <p>A Avancex compromete-se a fornecer acesso ao conteúdo adquirido dentro das condições estabelecidas na
+                    página de venda ou nas informações oficiais do produto no momento da compra. Entretanto, a empresa
+                    reserva-se o direito de realizar melhorias, atualizações, alterações estruturais ou modificações
+                    técnicas na plataforma sempre que necessário para aprimorar a experiência dos usuários ou garantir
+                    maior segurança operacional.</p>
+                <p>A empresa também se reserva o direito de atualizar, revisar ou modificar estes Termos e Condições de
+                    Uso sempre que considerar necessário para manter a conformidade legal, garantir transparência nas
+                    relações comerciais ou aprimorar a clareza das normas aplicáveis à utilização da plataforma.</p>
+                <p>Caso ocorram atualizações nos termos, a continuidade do uso da plataforma será interpretada como
+                    aceitação automática das novas condições estabelecidas.</p>
+                <p>Ao permanecer utilizando os serviços da Avancex, o usuário reafirma que compreende plenamente que
+                    possui total controle sobre o seu próprio dinheiro e que qualquer investimento realizado na compra
+                    de cursos ou conteúdos educacionais representa uma decisão consciente de aplicar recursos
+                    financeiros na aquisição de conhecimento.</p>
+                <p>A empresa reforça que o poder sobre o uso do dinheiro pertence exclusivamente ao próprio usuário,
+                    sendo ele o único responsável por decidir como, quando e em que deseja investir seus recursos
+                    financeiros.</p>
+                <p>A Avancex atua apenas como fornecedora de conteúdo educacional, sendo sua função disponibilizar
+                    conhecimento estruturado, treinamentos informativos e materiais educativos destinados ao
+                    aprendizado.</p>
+                <p>Portanto, ao adquirir qualquer curso dentro da plataforma, o usuário declara que compreende
+                    plenamente a natureza do produto, aceita os presentes termos de uso, reconhece sua responsabilidade
+                    sobre a utilização do próprio dinheiro e confirma que está realizando uma escolha voluntária de
+                    investir em conhecimento, educação e desenvolvimento pessoal.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a onclick="mostrarInicio()" class="logo" style="color: white;">AVANCE<span>X</span></a>
+                <p style="margin-top: 20px; font-size: 0.9rem; color: #94A3B8;">A Avancex é referência em cursos livres
+                    on-line com certificação rápida para o mercado de trabalho.</p>
+            </div>
+            <div class="footer-col">
+                <h4>CURSOS</h4>
+                <ul>
+                    <li><a onclick="mostrarSaibaMais('bloco-jornalismo')">Curso de jornalismo</a></li>
+                    <li><a onclick="mostrarSaibaMais('bloco-ingles')">Curso de inglês completo</a></li>
+                    <li><a href="https://sites.google.com/view/avancex-teste-gratuito/in%C3%ADcio"
+                            target="_blank">Inglês para iniciantes</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>PLATAFORMA</h4>
+                <ul>
+                    <li><a href="https://dashboard.kiwify.com/courses" target="_blank">Avancex Cursos</a></li>
+                    <li><a href="mailto:avancexsuporte@gmail.com?subject=Suporte Avancex">Central de ajuda</a></li>
+                    <li><a onclick="mostrarTermos()">Termos e Condições</a></li>
+                    <li><a href="mailto:avancexsuporte@gmail.com?subject=Suporte Avancex">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>REDES SOCIAIS</h4>
+                <div style="display: flex; gap: 15px; font-size: 1.5rem;">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function esconderTudo() {
+            document.getElementById('paginaInicio').style.display = 'none';
+            document.getElementById('paginaCursos').style.display = 'none';
+            document.getElementById('paginaSaibaMais').style.display = 'none';
+            document.getElementById('paginaTermos').style.display = 'none';
+        }
+
+        function mostrarInicio() {
+            esconderTudo();
+            document.getElementById('paginaInicio').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function mostrarPaginaCursos() {
+            esconderTudo();
+            document.getElementById('paginaCursos').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function mostrarSaibaMais(cursoId) {
+            esconderTudo();
+            document.getElementById('paginaSaibaMais').style.display = 'block';
+
+            let blocos = document.querySelectorAll('.curso-detalhe-bloco');
+            blocos.forEach(bloco => bloco.style.display = 'none');
+
+            document.getElementById(cursoId).style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function mostrarTermos() {
+            esconderTudo();
+            document.getElementById('paginaTermos').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        function pesquisarCursos() {
+
+            let input = document.getElementById("searchInput").value.toLowerCase();
+            let cursos = document.getElementsByClassName("course-card");
+
+            for (let i = 0; i < cursos.length; i++) {
+
+                let titulo = cursos[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
+
+                if (titulo.indexOf(input) > -1) {
+                    cursos[i].style.display = "block";
+                } else {
+                    cursos[i].style.display = "none";
+                }
+
+            }
+        }
+    </script>
+</body>
+
+</html>
